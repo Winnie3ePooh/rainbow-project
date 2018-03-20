@@ -22,21 +22,25 @@
               </div>
             </div>
             <div class="row">
-              <button class="btn waves-effect waves-light" type="submit" name="action" @click="getUserInfo()">Submit
+              <button class="btn waves-effect waves-light" type="button" @click="getUserInfo">Submit
                 <i class="material-icons right">send</i>
               </button>
             </div>
           </div>
         </form>
       </div>
-      <div class="row" v-if="seen">
-        <div class="col xl12 loader-div">
-          <div class="loader"></div>
+      <transition name="fade">
+        <div class="row" v-if="seen">
+          <div class="col xl12 loader-div">
+            <div class="loader"></div>
+          </div>
         </div>
-      </div>
-      <div class="row" v-if="playerProfile">
-        <player-profile-component :playerData="playerProfile.player"></player-profile-component>
-      </div>
+      </transition>
+      <transition name="fade">
+        <div class="row" v-if="playerProfile && !seen">
+          <player-profile-component :playerData="playerProfile.player"></player-profile-component>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -91,7 +95,7 @@ html {
 .loader-div {
   margin-top: 20px;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
 }
 .loader {
@@ -106,5 +110,11 @@ html {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
 }
 </style>

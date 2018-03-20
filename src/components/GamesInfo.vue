@@ -2,7 +2,7 @@
   <div class="row center">
     <div class="col xl10">
       <div class="row type">
-        <h1>{{type}}</h1>
+        <h1 class="center-align">{{type}}</h1>
       </div>
       <div class="row centered">
         <div class="col xl8 br">
@@ -75,24 +75,29 @@ export default {
 /* .col.xl10 {
   margin-left: 45px!important;
 } */
+.row {
+  margin-bottom: 0;
+}
+
 .row.center {
   display: flex;
   justify-content: center;
   height: 100%;
-  margin-bottom: 0;
 }
 .row.centered {
   display: flex;
   justify-content: center;
   height: 300px;
-  margin-bottom: 0;
 }
 .row.center .col {
   margin-left: 0!important;
 }
 .row.type {
   height: 100px;
-  margin-bottom: 0;
+}
+
+.type h1 {
+  margin: 0;
 }
 .stats {
   display: flex;
@@ -102,6 +107,7 @@ export default {
 }
 .stats .row {
   height: 33%;
+
 }
 .labels{
   display: flex;
