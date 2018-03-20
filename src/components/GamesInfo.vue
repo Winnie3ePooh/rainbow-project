@@ -6,7 +6,7 @@
       </div>
       <div class="row centered">
         <div class="col xl8 br">
-          <div class="col xl3 stats">
+          <div class="col xl3 stats top-to-bottom">
             <div class="row labels">
               <span class="label">wins:</span><span class="info">{{playerData.wins}}</span>
             </div>
@@ -14,7 +14,7 @@
               <span class="label">losses:</span><span class="info">{{playerData.losses}}</span>
             </div>
           </div>
-          <div class="col xl6 stats">
+          <div class="col xl6 stats top-to-bottom">
             <div class="row">
               <h5>K/D: {{playerData.kd}}</h5>
               <div class="progress">
@@ -107,8 +107,8 @@ export default {
 }
 .stats .row {
   height: 33%;
-
 }
+
 .labels{
   display: flex;
   justify-content: center;

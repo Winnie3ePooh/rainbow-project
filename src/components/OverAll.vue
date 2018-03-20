@@ -6,7 +6,7 @@
       </div>
       <div class="row centered">
         <div class="col xl8">
-          <div class="col xl4">
+          <div class="col xl4 top-to-bottom">
             <ul class="stats">
               <li class="center-align">
                 <span class="label">revives:</span><span class="info">{{playerData.revives}}</span>
@@ -22,7 +22,7 @@
               </li>
             </ul>
           </div>
-          <div class="col xl4">
+          <div class="col xl4 top-to-bottom">
             <ul class="stats">
               <li>
                 <span class="label">steps:</span><span class="info">{{playerData.steps}}</span>
@@ -102,7 +102,7 @@ export default {
   justify-content: center;
 }
 .stats {
-  width: 100%;
+  max-width: 100%;
   height: 300px;
   margin: 0;
   display: flex;
@@ -116,9 +116,12 @@ export default {
 }
 
 .label {
-
+  text-transform: uppercase;
+  color: rgb(43, 125, 161);
+  margin-right: 20px;
 }
 .info {
-
+  font-size: 30px;
+  font-style: italic;
 }
 </style>
